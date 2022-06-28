@@ -1,0 +1,424 @@
+@charset "UTF-8";
+/*Обнулення*/
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+/*--------------------*/
+/* для елемента input з type="checkbox" */
+.style-checkbox {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+
+/* для елемента label зв'язаного з .style-checkbox */
+.style-checkbox + label {
+  display: inline-flex;
+  align-items: center;
+  user-select: none;
+}
+
+/* створення в label псевдоелемента before з наступними стилями */
+.style-checkbox + label::before {
+  content: "";
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  flex-shrink: 0;
+  flex-grow: 0;
+  border: 1px solid #adb5bd;
+  border-radius: 0.25em;
+  margin-right: 0.5em;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 50% 50%;
+}
+
+/* стилі при наведенні курсора на checkbox */
+.style-checkbox:not(:disabled):not(:checked) + label:hover::before {
+  border-color: #b3d7ff;
+}
+
+/* стилі для активного чекбокса (при натисканні на нього) */
+.style-checkbox:not(:disabled):active + label::before {
+  background-color: #b3d7ff;
+  border-color: #b3d7ff;
+}
+
+/* стилі для чекбокса, який знаходиться в фокусі */
+.style-checkbox:focus + label::before {
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+/* стилі для чекбокса, який знаходиться в фокусі і який не знаходиться в стані checked */
+.style-checkbox:focus:not(:checked) + label::before {
+  border-color: #80bdff;
+}
+
+/* стилі для чекбокса, який знаходиться в стані checked */
+.style-checkbox:checked + label::before {
+  border-color: #0b76ef;
+  background-color: #0b76ef;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3e%3c/svg%3e");
+}
+
+/* стилі для чекбокса, який знаходиться в стані disabled */
+.style-checkbox:disabled + label::before {
+  background-color: #e9ecef;
+}
+
+/* для елемента input з type="radio" */
+.style-radio {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+
+/* для елемента label зв'язаного з .style-radio */
+.style-radio + label {
+  display: inline-flex;
+  align-items: center;
+  user-select: none;
+}
+
+/* створення в label псевдоелемента before з наступними стилями */
+.style-radio + label::before {
+  content: "";
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  flex-shrink: 0;
+  flex-grow: 0;
+  border: 1px solid #adb5bd;
+  border-radius: 50%;
+  margin-right: 0.5em;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 50% 50%;
+}
+
+/* стилі при наведенні курсора на radio */
+.style-radio:not(:disabled):not(:checked) + label:hover::before {
+  border-color: #b3d7ff;
+}
+
+/* стилі для активної радіокнопки (при натисканні на неї) */
+.style-radio:not(:disabled):active + label::before {
+  background-color: #b3d7ff;
+  border-color: #b3d7ff;
+}
+
+/* стилі для радіокнопки, яка знаходиться в фокусі */
+.style-radio:focus + label::before {
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+/* стилі для радіокнопки, яка знаходиться в фокусі і яка не знаходиться в стані checked */
+.style-radio:focus:not(:checked) + label::before {
+  border-color: #80bdff;
+}
+
+/* стилі для радіокнопки, яка знаходиться в стані checked */
+.style-radio:checked + label::before {
+  border-color: #0b76ef;
+  background-color: #0b76ef;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23fff'/%3e%3c/svg%3e");
+}
+
+/* стилі для радіокнопки, яка знаходиться в стані disabled */
+.style-radio:disabled + label::before {
+  background-color: #e9ecef;
+}
+
+body {
+  background-color: #f8fbfa;
+  font-family: "Lato", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+table {
+  border-collapse: collapse;
+  text-align: center;
+}
+
+.wrapper__container {
+  width: 100%;
+  min-height: 100vh;
+  padding: 50px 0;
+}
+
+.box {
+  width: 60%;
+  min-height: 250px;
+  background-color: #eaeeef;
+  border: 2px solid #d7dcdd;
+  border-radius: 5px;
+  margin: 0 auto;
+  padding: 20px 30px;
+}
+
+.button {
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 10px 14px;
+}
+
+input[type=text]:focus, select:focus, textarea:focus {
+  outline: 4px solid #a7caed;
+  border-radius: 4px;
+}
+
+.container__content {
+  display: block;
+  margin-bottom: 5px;
+}
+.container__content :not(:last-child) {
+  margin-bottom: 22px;
+}
+.container__content ul {
+  margin-left: 50px;
+}
+.container__content ul li {
+  padding-left: 10px;
+}
+
+.container__buttons {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 5px;
+}
+.container__buttons .button-edit {
+  background-color: #ffbc00;
+  margin-right: 4px;
+}
+.container__buttons .button-edit:hover {
+  background-color: #dda900;
+}
+.container__buttons .button-style {
+  background-color: #077691;
+}
+.container__buttons .button-style:hover {
+  background-color: #0c596d;
+}
+
+.container__edit {
+  display: none;
+}
+.container__edit #content {
+  display: flex;
+  width: 100%;
+  height: 180px;
+  border: 2px solid #d7dcdd;
+  border-radius: 5px;
+  padding-top: 10px;
+  overflow: auto;
+}
+.container__edit .edit__content {
+  margin-bottom: 10px;
+}
+.container__edit .edit__buttons {
+  display: flex;
+}
+.container__edit .edit__buttons .button-add {
+  margin-right: 4px;
+  background-color: #e74743;
+}
+.container__edit .edit__buttons .button-add:hover {
+  background-color: #d61b14;
+}
+.container__edit .edit__buttons .button-save {
+  background-color: #1f9642;
+}
+.container__edit .edit__buttons .button-save:hover {
+  background-color: #148335;
+}
+
+.container__style {
+  background-color: #eaeeef;
+  display: none;
+  justify-content: space-between;
+  align-items: center;
+}
+.container__style .style__box-style {
+  margin-right: 2%;
+}
+.container__style .style__box-style .style-title {
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.style__font-size {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+.style__font-size input:not(:last-child) {
+  margin-right: 2px;
+}
+.style__font-size label:not(:last-child) {
+  margin-right: 30px;
+}
+
+.style__font-family {
+  margin-bottom: 15px;
+}
+.style__font-family [name=font-family] {
+  width: 330px;
+  height: 30px;
+  padding: 6px;
+}
+
+.style__buttons {
+  display: flex;
+  margin-bottom: 15px;
+}
+.style__buttons .buttons__color {
+  background-color: #6c747b;
+  margin-right: 4px;
+}
+.style__buttons .buttons__color:hover {
+  background-color: #494c50;
+}
+.style__buttons .buttons__background {
+  background-color: #6c747b;
+}
+.style__buttons .buttons__background:hover {
+  background-color: #494c50;
+}
+.style__buttons .buttons__color.active, .style__buttons .buttons__background.active {
+  border-radius: 5px;
+  outline: 2px solid #77797a;
+  background-color: #000;
+}
+
+.style__font-style {
+  display: flex;
+  align-items: center;
+}
+.style__font-style input:not(:last-child) {
+  margin-right: 2px;
+}
+.style__font-style label:not(:last-child) {
+  margin-right: 10px;
+}
+
+.boxes {
+  display: none;
+  grid-template-columns: repeat(3, 65px);
+  grid-auto-rows: 65px;
+  margin-right: 16.9%;
+}
+
+.container__add {
+  display: none;
+  min-height: 450px;
+}
+.container__add .add__title {
+  font-size: 25px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+.container__add .add__choise {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+.container__add .add__choise input:not(:last-child) {
+  margin-right: 2px;
+}
+.container__add .add__choise label:not(:last-child) {
+  margin-right: 30px;
+}
+
+.container__table {
+  display: none;
+}
+
+.tr-td {
+  display: flex;
+  margin-bottom: 20px;
+}
+.tr-td input {
+  width: 100%;
+  height: 30px;
+  padding: 0 10px;
+}
+.tr-td label {
+  min-width: 17%;
+  display: flex;
+  align-items: center;
+}
+
+.table__title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.table__width-border {
+  margin-bottom: 25px;
+}
+.table__width-border .width-border__form {
+  display: flex;
+}
+.table__width-border .width-border__form input, .table__width-border .width-border__form select {
+  width: 100%;
+  height: 30px;
+  padding: 0 10px;
+}
+.table__width-border .width-border__form input, .table__width-border .width-border__form select:not(:last-child) {
+  margin-right: 30px;
+}
+.table__width-border .width-border__form label {
+  min-width: 17%;
+  display: flex;
+  align-items: center;
+}
+
+.button-2 {
+  display: inline-block;
+  background-color: #229542;
+}
+
+.table__button:hover {
+  background-color: #20803b;
+}
+
+.list__button:hover {
+  background-color: #20803b;
+}
+
+.container__list {
+  display: none;
+}
+.container__list .list__type-marks {
+  margin-bottom: 25px;
+}
+
+.li-form {
+  display: flex;
+  margin-bottom: 20px;
+}
+.li-form input, .li-form select {
+  width: 100%;
+  height: 30px;
+  padding: 0 10px;
+}
+.li-form label {
+  min-width: 17%;
+  display: flex;
+  align-items: center;
+}
+.li-form label:not(:last-child) {
+  margin-right: 30px;
+}
+
+/*# sourceMappingURL=outstyle.css.map */

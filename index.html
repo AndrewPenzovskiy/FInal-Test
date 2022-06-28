@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="./css/outstyle.css">
+    <title>Final Test</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="wrapper__container">
+            <div class="container__content box">
+                <p>Lorem ipsum dolor sit amet.</p>
+                <p>Lorem ipsum dolor sit amet.</p>
+                <p>Lorem ipsum dolor sit amet.</p>
+                <p>Lorem ipsum dolor sit amet.</p>
+                <p>Lorem ipsum dolor sit amet.</p>
+            </div>
+            <div class="container__buttons">
+                <div class="button-edit button">
+                    <a href="#">edit</a>
+                </div>
+                <div class="button-style button">
+                    <a href="#">style</a>
+                </div>
+            </div>
+            <div class="container__settings box">
+                <div class="container__edit">
+                    <div class="edit__content">
+                        <textarea name="content" id="content"></textarea>
+                    </div>
+                    <div class="edit__buttons">
+                        <div class="button-add button">
+                            <a href="#">add</a>
+                        </div>
+                        <div class="button-save button">
+                            <a href="#">save</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="container__style">
+                    <div class="style__box-style">
+                        <p class="style-title">Font Size:</p>
+                        <form class="style__font-size">
+                            <input type="radio" class="style-radio" name="font-size" id="w12"><label for="w12">12px</label>
+                            <input type="radio" class="style-radio" name="font-size" id="w14"><label for="w14">14px</label>
+                            <input type="radio" class="style-radio" name="font-size" id="w16" checked><label for="w16">16px</label>
+                            <input type="radio" class="style-radio" name="font-size" id="w18"><label for="w18">18px</label>
+                            <input type="radio" class="style-radio" name="font-size" id="w20"><label for="w20">20px</label>
+                        </form>
+                        <form class="style__font-family">
+                            <p class="style-title">Font Family:</p>
+                            <select name="font-family" id="font-family">
+                                <option>Choose option</option>
+                                <option value="cursive">cursive</option>
+                                <option value="fantasy">fantasy</option>
+                                <option value="monospace">monospace</option>
+                                <option value="sens-serif">sens-serif</option>
+                            </select>
+                        </form>
+                        <p class="style-title">Colors:</p>
+                        <div class="style__buttons">
+                            <div class="buttons__color button">
+                                <a href="#">Color of Text</a>
+                            </div>
+                            <div class="buttons__background button">
+                                <a href="#">Background color</a>
+                            </div>
+                        </div>
+                        <p class="style-title">Style:</p>
+                        <form class="style__font-style">
+                            <input type="checkbox" class="style-checkbox" name="font-style" id="bold-text"><label for="bold-text">Bold text</label>
+                            <input type="checkbox" class="style-checkbox" name="font-style" id="cursive-text"><label for="cursive-text">Cursive text</label>
+                        </form>
+                    </div>
+                    <div class="style__box-color boxes">
+                        <div class="box-color-item" style="background: #d53e45"></div>
+                        <div class="box-color-item" style="background: #287fff"></div>
+                        <div class="box-color-item" style="background: #39a544"></div>
+                        <div class="box-color-item" style="background: #343a40"></div>
+                        <div class="box-color-item" style="background: #fcc100"></div>
+                        <div class="box-color-item" style="background: #e2498b"></div>
+                        <div class="box-color-item" style="background: #ffffff"></div>
+                        <div class="box-color-item" style="background: #6f48c1"></div>
+                        <div class="box-color-item" style="background: #32a1b9"></div>
+                    </div>
+                    <div class="style__box-background boxes">
+                        <div class="box-background-item" style="background: #d53e45"></div>
+                        <div class="box-background-item" style="background: #287fff"></div>
+                        <div class="box-background-item" style="background: #39a544"></div>
+                        <div class="box-background-item" style="background: #343a40"></div>
+                        <div class="box-background-item" style="background: #fcc100"></div>
+                        <div class="box-background-item" style="background: #e2498b"></div>
+                        <div class="box-background-item" style="background: #ffffff"></div>
+                        <div class="box-background-item" style="background: #6f48c1"></div>
+                        <div class="box-background-item" style="background: #32a1b9"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="container__add box">
+                <div class="container__choise">
+                    <h1 class="add__title">Choose what you want:</h1>
+                    <form class="add__choise">
+                        <input type="radio" class="style-radio" name="choise" id="choise-table"><label for="choise-table">table</label>
+                        <input type="radio" class="style-radio" name="choise" id="choise-list"><label for="choise-list">list</label>
+                    </form>
+                </div>
+                <div class="container__table">
+                    <div class="table__count-tr">
+                        <form class="count-tr__form tr-td">
+                            <label class="count-tr" for="count-tr">Count TR:</label><input type="text" id="count-tr" placeholder="Count TR:">
+                        </form>
+                    </div>
+                    <div class="table__count-td">
+                        <form class="count-td__form tr-td">
+                            <label class="count-tr" for="count-td">Count TD:</label><input type="text" id="count-td" placeholder="Count TD:">
+                        </form>
+                    </div>
+                    <h3 class="table__title">Add style to your table:</h3>
+                    <div class="table__width-td">
+                        <form class="width-td__form tr-td">
+                            <label class="width-td" for="width-td">Width of TD:</label><input type="text" id="width-td" placeholder="Width of TD:">
+                        </form>
+                    </div>
+                    <div class="table__height-td">
+                        <form class="height-td__form tr-td">
+                            <label class="height-td" for="height-td">Height of TD:</label><input type="text" id="height-td" placeholder="Height of TD:">
+                        </form>
+                    </div>
+                    <div class="table__width-border">
+                        <form class="width-border__form">
+                            <label for="width-border">Width of border:</label><input type="text" id="width-border" placeholder="Width:">
+                            <label for="type-border">Type of border:</label>
+                            <select id="type-border">
+                                <option value="solid" selected>solid</option>
+                                <option value="dashed">dashed</option>
+                                <option value="double">double</option>
+                                <option value="dotted">dotted</option>
+                            </select>
+                            <label for="color-border">Color of border:</label>
+                            <select id="color-border">
+                                <option value="black" selected>black</option>
+                                <option value="red">red</option>
+                                <option value="blue">blue</option>
+                                <option value="green">green</option>
+                            </select>
+                        </form>
+                    </div>
+                    <div class="table__button button button-2">
+                        <a href="#">Create table</a>
+                    </div>
+                </div>
+                <div class="container__list">
+                    <div class="list__count-li">
+                        <form class="count-li__form li-form">
+                            <label for="count-li">Count LI:</label><input type="text" id="count-li" placeholder="Count Li:">
+                        </form>
+                    </div>
+                    <div class="list__type-marks">
+                        <form class="type-marks__form li-form">
+                            <label for="type-marks">Type of marks:</label>
+                            <select id="type-marks">
+                                <option value="circle" selected>circle</option>
+                                <option value="disk">disk</option>
+                                <option value="square">square</option>
+                            </select>
+                        </form>
+                    </div>
+                    <div class="list__button button button-2">
+                        <a href="#">Create list</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./js/script.js"></script>
+</body>
+</html>
